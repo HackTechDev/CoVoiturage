@@ -41,13 +41,16 @@
 
 error_reporting(0);
 
+// Aucun trajet = 0
+// Matin = 1
+// Soire = 2
+// Matin et Soir =3
 $db = "covoiturage.csv";
 
 $trajet = array();
 
 if (($handle = fopen($db, "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-        //echo $data[0] . " " . $data[1] . " " . $data[2] . "\n";
         $trajet[$data[0]][$data[1]] = $data[2];
     }
     fclose($handle);
@@ -62,8 +65,8 @@ M = Matin / S = Soir<br/>
 <?php
 // Variables globales
 $jourTab = array("", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche");
-$moisTab = array("", "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", 
-            "Septembre", "Octobre", "Novembre", "Decembre");
+$moisTab = array("", "Janvier", "F&eacute;vrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Ao&uirc;t", 
+            "Septembre", "Octobre", "Novembre", "D&eacute;cembre");
 $annee = 2014; // Annee du calendrier a afficher
 $nbJour = 5; // Nombre de jour max dans 1 semaine
 $numSemaine = 0; // Numero de la semaine dans l'annee
@@ -84,7 +87,6 @@ include("mois.pat.php");
 
 $numMois = 4; 
 include("mois.pat.php");
-
 
 ?>
 

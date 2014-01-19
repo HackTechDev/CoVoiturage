@@ -45,15 +45,17 @@ error_reporting(0);
 // Matin = 1
 // Soire = 2
 // Matin et Soir =3
-$db = "covoiturage.csv";
 
 $trajet = array();
 
-if (($handle = fopen($db, "r")) !== FALSE) {
-    while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
-        $trajet[$data[0]][$data[1]] = $data[2];
+for($mois=1;$mois<=12;$mois++) {
+    $db = "covoiturage_" . $mois . ".csv";
+    if (($handle = fopen($db, "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
+            $trajet[$data[0]][$data[1]] = $data[2];
+        }
+        fclose($handle);
     }
-    fclose($handle);
 }
 ?>
 

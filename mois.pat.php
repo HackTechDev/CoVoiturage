@@ -7,9 +7,7 @@ $nbTrajetSemaine = 0; // Nombre de trajet par semaine
 $nbTrajetMois = 0; // Nombre de trajet par mois
 $nbSemaine = (( (($decalage + $nbJourMois)-1)  - ((($decalage + $nbJourMois)-1) % 7) ) / 7 ) + 1; // Nombre de semaine dans un mois
 ?>
-<br/>
-Calendrier du mois de <?php echo lcfirst($moisTab[$numMois]); ?> <br/>
-<br/>
+<h2> <?php echo ucfirst($moisTab[$numMois]); ?><h2/>
 <table border="1">
     <tr>
         <th class="nomJourSemaine">

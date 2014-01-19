@@ -38,6 +38,9 @@
     <body>   
 <h1>Co-voiturage 2014</h1>
 <?php
+
+error_reporting(0);
+
 $db = "covoiturage.csv";
 
 $trajet = array();

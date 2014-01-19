@@ -36,8 +36,13 @@ Calendrier du mois de <?php echo lcfirst($moisTab[$numMois]); ?> <br/>
     </tr> 
 <?php
 for($compteurSemaine=1; $compteurSemaine<=$nbSemaine; $compteurSemaine++) {
+    if ($compteurSemaine == 1 && ($decalage == 6 || $decalage == 7)) {
+        $style = "display: none;";      
+    } else {
+        $style = "";
+    }
 ?>
-    <tr>
+    <tr style="<?php echo $style; ?>">
         <td class="colonne">
             Semaine <?php echo $numSemaine + $compteurSemaine; ?>
         </td>
@@ -45,7 +50,7 @@ for($compteurSemaine=1; $compteurSemaine<=$nbSemaine; $compteurSemaine++) {
         for($compteurJour=1;$compteurJour<=$nbJour;$compteurJour++) {
             // Calcule le decalage 
             // 1er ligne = Cellule blanche
-            //                                                      // Derniere ligne = Cellule blanche
+            //                                                         Derniere ligne = Cellule blanche
             if(($compteurSemaine == 1 && $compteurJour < $decalage) || $numJour > $nbJourMois) { 
     ?>
                 <td >

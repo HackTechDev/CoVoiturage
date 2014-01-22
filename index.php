@@ -72,9 +72,11 @@ $moisTab = array("", "Janvier", "F&eacute;vrier", "Mars", "Avril", "Mai", "Juin"
 $annee = 2014; // Annee du calendrier a afficher
 $nbJour = 5; // Nombre de jour max dans 1 semaine
 $numSemaine = 0; // Numero de la semaine dans l'annee
+$jourAujourdhui = date("j");
+$moisAujourdhui = date("n");
 ?>
 
-Nous somme le <?php echo $jourTab[date("N")] . " " . date("j") . " " . lcfirst($moisTab[date("n")]) . " " . date("Y"); ?>
+Nous somme le <?php echo $jourTab[date("N")] . " " . $jourAujourdhui . " " . lcfirst($moisTab[$moisAujourdhui]) . " " . date("Y"); ?>
 
 <br/>
 <?php

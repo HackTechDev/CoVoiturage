@@ -67,8 +67,13 @@ for($compteurSemaine=1; $compteurSemaine<=$nbSemaine; $compteurSemaine++) {
    <?php
             } else {
                 // Ligne normale
+                if ($numJour == $jourAujourdhui) {
+                    $styleJourAujourdhui = "color: green;opacity: 1;";
+                } else {
+                    $styleJourAujourdhui = "color: black;";
+                }
    ?>
-                <td >
+                <td>
                     <div class="colonne">
                         <div class="matin">
                             <?php
@@ -81,7 +86,7 @@ for($compteurSemaine=1; $compteurSemaine<=$nbSemaine; $compteurSemaine++) {
                                 }
                             ?>
                         </div>
-                        <div class="date">
+                        <div class="date" style="<?php echo $styleJourAujourdhui; ?>">
                             <?php 
                                 echo $numJour; 
                             ?>
